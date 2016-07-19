@@ -1,97 +1,87 @@
-app({
-  appId: 'IYRGCR7MUA',
-  apiKey: 'd4e02a36563c6739e4ff189f9bacb8d8',
-  indexName: 'dev_POST_WEBDEV'
-});
-
-function app(opts) {
-  var search = instantsearch({
-    appId: opts.appId,
-    apiKey: opts.apiKey,
-    indexName: opts.indexName,
-    urlSync: true
-  });
-
-  search.addWidget(
-    instantsearch.widgets.searchBox({
-      container: '#search-input',
-      placeholder: 'Search for products'
-    })
-  );
-
-  search.addWidget(
-    instantsearch.widgets.hits({
-      container: '#hits',
-      hitsPerPage: 10,
-      templates: {
-        item: getTemplate('hit'),
-        empty: getTemplate('no-results')
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place Autocomplete</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
       }
-    })
-  );
-
-  search.addWidget(
-    instantsearch.widgets.stats({
-      container: '#stats'
-    })
-  );
-
-  search.addWidget(
-    instantsearch.widgets.sortBySelector({
-      container: '#sort-by',
-      autoHideContainer: true,
-      indices: [{
-        name: opts.indexName, label: 'Most relevant'
-      }, {
-        name: opts.indexName + '_price_asc', label: 'Lowest price'
-      }, {
-        name: opts.indexName + '_price_desc', label: 'Highest price'
-      }]
-    })
-  );
-
-  search.addWidget(
-    instantsearch.widgets.pagination({
-      container: '#pagination',
-      scrollTo: '#search-input'
-    })
-  );
-
-  /*search.addWidget(
-    instantsearch.widgets.refinementList({
-      container: '#category',
-      attributeName: 'categories',
-      limit: 10,
-      operator: 'or',
-      templates: {
-        header: getHeader('Category')
+      #cityLat { 
+        position: relative;
+        margin-top: 10px;
+        left: 1000px;
       }
-    })
-  );
-
-  search.addWidget(
-    instantsearch.widgets.rangeSlider({
-      container: '#price',
-      attributeName: 'price',
-      templates: {
-        header: getHeader('Price')
+      #cityLng { 
+        position: relative;
+        margin-top: 10px;
+        left: 1200px;
       }
-    })
-  );
-*/
+      #map {
+        height: 100%;
+        width: 30%;
+      }
+      .controls {
+        margin-top: 10px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
 
-  search.start();
-}
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 300px;
+      }
 
-function getTemplate(templateName) {
-  return document.querySelector('#' + templateName + '-template').innerHTML;
-}
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
 
-function getHeader(title) {
-  return '<h5>' + title + '</h5>';
-}
+      .pac-container {
+        font-family: Roboto;
+      }
 
-function initMap() {
+      #type-selector {
+        color: #fff;
+        background-color: #4d90fe;
+        padding: 5px 11px 0px 11px;
+      }
+
+      #type-selector label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="pac-input" class="controls" type="text"
+        placeholder="Enter a location">
+   <input id="cityLat" name="cityLat" class="controls"  />
+   <input id="cityLng" name="cityLng" class="controls"  />
+  
+    <div id="map"></div>
+
+    <script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+  
+
+      function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -33.8688, lng: 151.2195},
           zoom: 13
@@ -169,3 +159,11 @@ function initMap() {
         setupClickListener('changetype-establishment', ['establishment']);
         setupClickListener('changetype-geocode', ['geocode']);
       }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLXSzyuY1emlvYJwKRkISVst72_7nKOU4&libraries=places&callback=initMap"
+        async defer></script>
+    
+   
+  </body>
+</html>
+

@@ -2,20 +2,15 @@
 * {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
-html {
-  overflow-y: scroll;
-  background: #FFF;
-}
+
 header, main, #no-results, footer {
-  width: 1000px;
+  width: 700px;
   margin: 0 auto;
 }
-main {
-  min-height: 360px;
-}
+
 #left-column {
   float: left;
-  width: 23%;
+  width: 0%;
 }
 #right-column {
   width: 74%;
@@ -41,10 +36,16 @@ header img {
   float: left;
   max-width: 23%;
 }
+
+#productsearch{
+  padding: 0px 900px;
+}
+
+
 #search-input input {
   font-size: 28px;
   font-weight: 100;
-  width: 74%;
+  width: 44%;
   margin-left: 26%;
   padding: 10px 0 6px;
   border: none;
@@ -103,7 +104,7 @@ header img {
   font-weight: 300;
   display: inline-block;
   width: 83%;
-  margin-left: 1%;
+  margin-left: 10%;
   vertical-align: top;
 }
 .hit-content .hit-price {
@@ -112,7 +113,7 @@ header img {
   margin-left: 20px;
   color: #ed5565;
 }
-.hit-content .hit-price, .hit-content .hit-name {
+.hit-content .hit-price, .hit-content .hit-title {
   font-weight: normal;
   margin-top: 0;
 }
@@ -236,9 +237,7 @@ header img {
   padding: 0;
   list-style-type: none;
 }
-.facet li {
-  margin-bottom: 3px;
-}
+
 .ais-refinement-list--label,
 .ais-menu--link {
   font-size: 13px;
@@ -338,18 +337,4 @@ a.clear-all:hover {
   border-color: #ed5565;
 }
 
-/* FOOTER */
-footer {
-  font-size: 14px;
-  margin-top: 200px;
-  margin-bottom: 24px;
-  text-align: center;
-}
-footer a {
-  text-decoration: none;
-  color: #ed5565;
-}
-footer a:hover {
-  text-decoration: underline;
-  color: #ed5565;
-}
+
