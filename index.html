@@ -12,75 +12,76 @@
     <link rel="stylesheet" type="text/css" href="mapstyle.css">
   </head>
 
-  <body>
   
-    <!--map stuff -->
-    <div id="mapsearch">
-      <input id="pac-input" class="controls" type="text" placeholder="Enter a location"> 
-      <input type= "hidden" id="cityLat" name="cityLat" class="controls"  />
-      <input type= "hidden" id="cityLng" name="cityLng" class="controls"  />
-        
-
+    <div id  = "general">
+      <!--map stuff -->
+      
       <div id="map"></div>
+        <input id="pac-input" class="controls" type="text" placeholder="Enter a location"> 
+        <input type= "hidden" id="cityLat" name="cityLat" class="controls"  />
+        <input type= "hidden" id="cityLng" name="cityLng" class="controls"  />
+          
 
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLXSzyuY1emlvYJwKRkISVst72_7nKOU4&libraries=places&callback=initMap" async defer></script>
         
-      <script src="map.js"></script>
-    </div>
-     <!-- end map stuff -->
 
-    <div id="productsearch">
-      <!-- INTERFACE -->
-      <header> 
-        <div id="search-input"></div>
-        <div id="search-input-icon"></div>
-      </header>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLXSzyuY1emlvYJwKRkISVst72_7nKOU4&libraries=places&callback=initMap" async defer></script>
+          
+        <script src="map.js"></script>
+      
+       <!-- end map stuff -->
 
-      <main>
-        <div id="left-column">
-          <div id="category" class="facet"></div>
-          <div id="price" class="facet"></div>
-        </div>
+      <div id="productsearch" >
+        <!-- INTERFACE -->
+        <header> 
+          <div id="search-input"></div>
+          <div id="search-input-icon"></div>
+        </header>
 
-        <div id="right-column">
-          <div id="sort-by-wrapper"><span id="sort-by"></span></div>
-          <div id="stats"></div>
-          <div id="hits"></div>
-          <div id="pagination"></div>
-        </div>
-      </main>
-
-      <!-- /INTERFACE -->
-
-      <!-- TEMPLATES -->
-      <script type="text/html" id="hit-template">
-        <div class="hit">
-          <div class="hit-image">
-            <img src="{{image}}" alt="{{name}}">
+        <main>
+          <div id="left-column">
+            <div id="category" class="facet"></div>
+            <div id="price" class="facet"></div>
           </div>
-          <div class="hit-content">
-            <h3 class="hit-price">${{price}}</h3>
-            <h2 class="hit-title">{{{_highlightResult.title.value}}}</h2>
-            <p class="hit-description">{{{_highlightResult.description.value}}}</p>
+
+          <div id="right-column">
+            <div id="sort-by-wrapper"><span id="sort-by"></span></div>
+            <div id="stats"></div>
+            <div id="hits"></div>
+            <div id="pagination"></div>
           </div>
-        </div>
-      </script>
+        </main>
 
-      <script type="text/html" id="no-results-template">
-        <div id="no-results-message">
-          <p>We didnt find any results for the search <em>"{{query}}"</em>.</p>
-          <a href="." class='clear-all'>Clear search</a>
-        </div>
-      </script>
-      <!-- /TEMPLATES -->
+        <!-- /INTERFACE -->
 
-      <!-- SCRIPTS -->
-      <script src="http://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
-      <script src="app.js"></script>
-      <!-- /SCRIPTS -->
+        <!-- TEMPLATES -->
+        <script type="text/html" id="hit-template">
+          <div class="hit">
+            <div class="hit-image">
+              <img src="{{image}}" alt="{{name}}">
+            </div>
+            <div class="hit-content">
+              <h3 class="hit-price">${{price}}</h3>
+              <h2 class="hit-title">{{{_highlightResult.title.value}}}</h2>
+              <p class="hit-description">{{{_highlightResult.description.value}}}</p>
+            </div>
+          </div>
+        </script>
+
+        <script type="text/html" id="no-results-template">
+          <div id="no-results-message">
+            <p>We didnt find any results for the search <em>"{{query}}"</em>.</p>
+            <a href="." class='clear-all'>Clear search</a>
+          </div>
+        </script>
+        <!-- /TEMPLATES -->
+
+        <!-- SCRIPTS -->
+        <script src="http://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+        <script src="app.js"></script>
+        <!-- /SCRIPTS -->
+      </div>
     </div>
-
-  </body>
+ 
 
 </html>
 

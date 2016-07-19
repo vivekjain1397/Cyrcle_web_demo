@@ -3,10 +3,22 @@
         margin: 0;
         padding: 0px;
       }
-      #mapsearch{
+      #general{
         height: 100%;
+        width: 2000px;
         margin: 0;
       }
+      #map {
+        height: 100%;
+        width: 800px;
+        display: inline-block;
+      }
+      
+      #productsearch{
+        width: 500px;
+        display: inline-block;
+      }
+      
       #cityLat { 
         position: relative;
         margin-top: 10px;
@@ -16,10 +28,6 @@
         position: relative;
         margin-top: 10px;
         left: 1200px;
-      }
-      #map {
-        height: 100%;
-        width: 30%;
       }
       .controls {
         margin-top: 10px;

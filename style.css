@@ -25,21 +25,19 @@ header, main, #no-results, footer {
 
 /* INPUT */
 header {
-  position: relative;
+  
   height: 80px;
   margin-top: 40px;
 }
 header img {
-  position: absolute;
+  
   top: 9px;
   left: 0;
   float: left;
   max-width: 23%;
 }
 
-#productsearch{
-  padding: 0px 900px;
-}
+
 
 
 #search-input input {
