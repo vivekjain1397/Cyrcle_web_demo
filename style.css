@@ -2,7 +2,10 @@
 * {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
-
+html {
+  overflow-y: scroll;
+  background: #FFF;
+}
 header, main, #no-results, footer {
   width: 1000px;
   margin: 0 auto;
@@ -333,4 +336,20 @@ a.clear-all:hover {
 
 .ais-range-slider--handle {
   border-color: #ed5565;
+}
+
+/* FOOTER */
+footer {
+  font-size: 14px;
+  margin-top: 200px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+footer a {
+  text-decoration: none;
+  color: #ed5565;
+}
+footer a:hover {
+  text-decoration: underline;
+  color: #ed5565;
 }

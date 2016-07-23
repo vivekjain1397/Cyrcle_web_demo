@@ -1,21 +1,17 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Cyrcle Web Demo</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <!-- IE < 10 support -->
-    <!--[if lte IE 9]>
-      <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-    <![endif]-->
-   
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="mapstyle.css">
-  </head>
-
-  
-    
-
-      <div id="map"></div>
+<head>
+  <title>Instant Search Tutorial</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <!-- IE < 10 support -->
+  <!--[if lte IE 9]>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="mapstyle.css">
+</head>
+<div id="map"></div>
         <input id="pac-input" class="controls" type="text" placeholder="Enter a location"> 
         <input  id="cityLat" name="cityLat" class="controls"  />
         <input  id="cityLng" name="cityLng" class="controls"  />
@@ -23,99 +19,56 @@
          <script src="map2.js"></script>
         
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLXSzyuY1emlvYJwKRkISVst72_7nKOU4&libraries=places&callback=initMap" async defer></script>
-          <!--
-          <script src="https://cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.common.js"></script>
-          -->
 
-       
-       <!-- end map stuff -->
+<div id = "productsearch">
+  <!-- INTERFACE -->
+  <header>
+    <div id="search-input"></div>
+    <div id="search-input-icon"></div>
+  </header>
 
-      <div id="productsearch" >
-        <!-- INTERFACE -->
-        <header> 
-          <div id="search-input"></div>
-          <div id="search-input-icon"></div>
-        </header>
+  <main>
+    <div id="left-column">
+      <div id="category" class="facet"></div>
+      <div id="price" class="facet"></div>
+    </div>
 
-        <main>
-          <div id="left-column">
-            <div id="category" class="facet"></div>
-            <div id="price" class="facet"></div>
-          </div>
+    <div id="right-column">
+      <div id="sort-by-wrapper"><span id="sort-by"></span></div>
+      <div id="stats"></div>
+      <div id="hits"></div>
+      <div id="pagination"></div>
+    </div>
+  </main>
 
-          <div id="right-column">
-            <div id="sort-by-wrapper"><span id="sort-by"></span></div>
-            <div id="stats"></div>
-            <div id="hits"></div>
-            <div id="pagination"></div>
-          </div>
-        </main>
-
-        <!-- /INTERFACE -->
-
-        <!-- TEMPLATES -->
-        <script type="text/html" id="hit-template">
-          <div class="hit">
-            <div class="hit-image">
-              <img src="{{image}}" alt="{{name}}">
-            </div>
-            <div class="hit-content">
-              <h3 class="hit-price">${{price}}</h3>
-              <h2 class="hit-title">{{{_highlightResult.title.value}}}</h2>
-              <p class="hit-description">{{{_highlightResult.description.value}}}</p>
-            </div>
-          </div>
-        </script>
-
-        <script type="text/html" id="no-results-template">
-          <div id="no-results-message">
-            <p>We didnt find any results for the search <em>"{{query}}"</em>.</p>
-            <a href="." class='clear-all'>Clear search</a>
-          </div>
-        </script>
-        <!-- /TEMPLATES -->
-
-        <!-- SCRIPTS -->
-          <!--
-          <script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
-          <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-          <script src="//cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
-          <script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.common.js"></script>
-          -->
-        <script src="http://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
-        <script src="app.js"></script>
-        <!-- /SCRIPTS -->
-      
-   
  
+  <!-- /INTERFACE -->
 
+  <!-- TEMPLATES -->
+  <script type="text/html" id="hit-template">
+    <div class="hit">
+      <div class="hit-image">
+        <img src="{{image}}" alt="{{name}}">
+      </div>
+      <div class="hit-content">
+        <h3 class="hit-price">${{price}}</h3>
+        <h2 class="hit-title">{{{_highlightResult.title.value}}}</h2>
+        <p class="hit-description">{{{_highlightResult.description.value}}}</p>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/html" id="no-results-template">
+    <div id="no-results-message">
+      <p>We didnt find any results for the search <em>"{{query}}"</em>.</p>
+      <a href="." class='clear-all'>Clear search</a>
+    </div>
+  </script>
+  <!-- /TEMPLATES -->
+
+  <!-- SCRIPTS -->
+  <script src="http://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+  <script src="app.js"></script>
+  <!-- /SCRIPTS -->
+</div>
 </html>
-
-<!--
-<html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="mapstyle.css">
-   
-  </head>
-  <body>
-    <input id="pac-input" class="controls" type="text"
-        placeholder="Enter a location">
-        
-   <input id="cityLat" name="cityLat" class="controls"  />
-   <input id="cityLng" name="cityLng" class="controls"  />
-      
-    <div id="map"></div>
-
-    
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLXSzyuY1emlvYJwKRkISVst72_7nKOU4&libraries=places&callback=initMap"
-        async defer></script>
-    
-   <script src="map.js"></script>
-  </body>
-</html>
--->
