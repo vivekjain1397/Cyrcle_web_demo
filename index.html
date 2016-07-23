@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Instant Search Tutorial</title>
+    <title>Cyrcle Web Demo</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <!-- IE < 10 support -->
     <!--[if lte IE 9]>
@@ -13,21 +13,24 @@
   </head>
 
   
-    <div id  = "general">
-      <!--map stuff -->
-      
+    
+
       <div id="map"></div>
         <input id="pac-input" class="controls" type="text" placeholder="Enter a location"> 
-        <input type= "hidden" id="cityLat" name="cityLat" class="controls"  />
-        <input type= "hidden" id="cityLng" name="cityLng" class="controls"  />
-          
+        <input  id="cityLat" name="cityLat" class="controls"  />
+        <input  id="cityLng" name="cityLng" class="controls"  />
 
+         <script src="map2.js"></script>
         
-
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLXSzyuY1emlvYJwKRkISVst72_7nKOU4&libraries=places&callback=initMap" async defer></script>
-          
-        <script src="map.js"></script>
-      
+          <!--
+          <script src="https://cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.common.js"></script>
+          -->
+
+       
        <!-- end map stuff -->
 
       <div id="productsearch" >
@@ -76,11 +79,17 @@
         <!-- /TEMPLATES -->
 
         <!-- SCRIPTS -->
+          <!--
+          <script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+          <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+          <script src="//cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
+          <script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.common.js"></script>
+          -->
         <script src="http://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
         <script src="app.js"></script>
         <!-- /SCRIPTS -->
-      </div>
-    </div>
+      
+   
  
 
 </html>

@@ -4,13 +4,15 @@
 }
 
 header, main, #no-results, footer {
-  width: 700px;
+  width: 1000px;
   margin: 0 auto;
 }
-
+main {
+  min-height: 360px;
+}
 #left-column {
   float: left;
-  width: 0%;
+  width: 23%;
 }
 #right-column {
   width: 74%;
@@ -25,25 +27,21 @@ header, main, #no-results, footer {
 
 /* INPUT */
 header {
-  
+  position: relative;
   height: 80px;
   margin-top: 40px;
 }
 header img {
-  
+  position: absolute;
   top: 9px;
   left: 0;
   float: left;
   max-width: 23%;
 }
-
-
-
-
 #search-input input {
   font-size: 28px;
   font-weight: 100;
-  width: 44%;
+  width: 74%;
   margin-left: 26%;
   padding: 10px 0 6px;
   border: none;
@@ -102,7 +100,7 @@ header img {
   font-weight: 300;
   display: inline-block;
   width: 83%;
-  margin-left: 10%;
+  margin-left: 1%;
   vertical-align: top;
 }
 .hit-content .hit-price {
@@ -111,7 +109,7 @@ header img {
   margin-left: 20px;
   color: #ed5565;
 }
-.hit-content .hit-price, .hit-content .hit-title {
+.hit-content .hit-price, .hit-content .hit-name {
   font-weight: normal;
   margin-top: 0;
 }
@@ -235,7 +233,9 @@ header img {
   padding: 0;
   list-style-type: none;
 }
-
+.facet li {
+  margin-bottom: 3px;
+}
 .ais-refinement-list--label,
 .ais-menu--link {
   font-size: 13px;
@@ -334,5 +334,3 @@ a.clear-all:hover {
 .ais-range-slider--handle {
   border-color: #ed5565;
 }
-
-
