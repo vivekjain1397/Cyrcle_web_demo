@@ -338,6 +338,20 @@ a.clear-all:hover {
   border-color: #ed5565;
 }
 
+   .product-rating {
+    float: right;
+    margin-bottom: 10px;
+  }
+  .product-lat {
+    margin-bottom: 10px;
+  }
+  .product-lng {
+    margin-bottom: 10px;
+  }
+
+  .product-radius {
+    margin-bottom: 10px;
+  }
 /* FOOTER */
 footer {
   font-size: 14px;

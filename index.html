@@ -31,6 +31,7 @@
     <div id="left-column">
       <div id="category" class="facet"></div>
       <div id="price" class="facet"></div>
+      <div id = "sellerRating" class="facet"></div>
     </div>
 
     <div id="right-column">
@@ -54,9 +55,17 @@
         <h3 class="hit-price">${{price}}</h3>
         <h2 class="hit-title">{{{_highlightResult.title.value}}}</h2>
         <p class="hit-description">{{{_highlightResult.description.value}}}</p>
+        <p class="product-rating">{{sellerRating}}</p>
+        <p class="product-lat">{{postLocation.lat}}</p>
+        <p class="product-lng">{{postLocation.lng}}</p>
+        <p class="product-radius">{{postRadius}}</p>
       </div>
     </div>
+
+
   </script>
+
+  
 
   <script type="text/html" id="no-results-template">
     <div id="no-results-message">
